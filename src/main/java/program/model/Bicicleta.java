@@ -1,5 +1,7 @@
 package program.model;
 
+import program.datatypes.DtBicicleta;
+import program.datatypes.DtVehiculo;
 import program.datatypes.TipoBici;
 
 public class Bicicleta extends Vehiculo {
@@ -32,6 +34,11 @@ public class Bicicleta extends Vehiculo {
     @Override
     public float darPrecioViaje(int duracion, int distancia) {
         return distancia*getPrecioBase();
+    }
+
+    @Override
+    public DtVehiculo getDt(){
+        return new DtBicicleta(getNroSerie(),getPorcentajeBateria(),getPrecioBase(),getBici(),getCantCambios());
     }
 
     @Override

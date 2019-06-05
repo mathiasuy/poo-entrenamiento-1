@@ -1,5 +1,7 @@
 package program.model;
 
+import program.datatypes.DtVehiculo;
+
 public abstract class Vehiculo {
 
     private int nroSerie;
@@ -44,6 +46,8 @@ public abstract class Vehiculo {
     public float getPrecioBase() {
         return precioBase;
     }
+
+    public abstract DtVehiculo getDt();
 
     @Override
     public String toString() {

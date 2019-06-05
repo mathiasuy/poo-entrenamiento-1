@@ -1,5 +1,8 @@
 package program.model;
 
+import program.datatypes.DtMonopatin;
+import program.datatypes.DtVehiculo;
+
 public class Monopatin extends Vehiculo{
 
     private boolean tieneLuces;
@@ -16,6 +19,12 @@ public class Monopatin extends Vehiculo{
     public void setTieneLuces(boolean tieneLuces) {
         this.tieneLuces = tieneLuces;
     }
+
+    @Override
+    public DtVehiculo getDt(){
+        return new DtMonopatin(getNroSerie(),getPorcentajeBateria(),getPrecioBase(),isTieneLuces());
+    }
+
 
     @Override
     public float darPrecioViaje(int duracion, int distancia) {
